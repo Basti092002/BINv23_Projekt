@@ -1,0 +1,10 @@
+@startuml
+skinparam responseMessageBelowArrow true
+User -> Frontend: input (place bet)
+Frontend -> Backend: setBet(User, Klausur, Double)
+Backend -> Database: save bet
+Database -> Backend: bet saved
+Backend -> Frontend: bet created
+Frontend -> User: bet created
+
+@enduml
