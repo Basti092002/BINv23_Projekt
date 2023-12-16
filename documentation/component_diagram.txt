@@ -1,0 +1,19 @@
+@startuml
+component UserFrontend
+component AdminFrontend
+component Backend
+
+
+UserFrontend -- Backend
+AdminFrontend -- Backend
+
+database "MySql" {
+  folder "Daten" {
+    [Testdata1]
+  }
+
+}
+
+Backend --> [Testdata1]
+
+@enduml
