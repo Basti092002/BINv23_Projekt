@@ -1,0 +1,36 @@
+@startuml
+
+User "1" --> "n" Wetten
+Klausur "1" --> "n" Wetten
+
+class User {
+  - password: String
+  + name: String
+  
+  - checkPassword(): Boolean
+  - login(String, String): access
+  + create(String, String): User
+  
+}
+
+class Klausur{
+  + name: String
+  + schnitt: Double
+  
+  + createKlausur(String): Klausur
+}
+
+class Wetten{
+  + ZeitraumBeginn: DateTime
+  + ZeitraumEnde: DateTime
+  + Ranking: User[]
+  
+  + showBets(): Wetten[]
+  + setBet(User, Klausur, Double)
+  + userEnterBet(User, Klausur)
+  - generateResults(): User[]
+  
+}
+
+
+@enduml
