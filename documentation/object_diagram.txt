@@ -1,0 +1,35 @@
+@startuml
+object user {
+  name = "Dummy"
+  id = 123
+}
+
+object Klausur {
+  name = "Mathe 1"
+  schnitt = "1.7"
+}
+
+object Wetten {
+  ZeitraumBeginn: "01.01.2023"
+  ZeitraumEnde: "01.03.2023"
+  Bets: mapBets
+  Ranking: map
+}
+map "map: Map<Integer, String>" as users {
+ 1 => 123
+ 2 => 
+ 3 => 
+}
+
+map "map: Map<Double, String>" as test{
+ 1.7 => 123
+ 2 => 
+ 3 => 
+}
+
+user -- Wetten
+Wetten -- Klausur
+Wetten -- users
+Wetten -- test
+
+@enduml
